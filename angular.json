@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "bitch": {
+    "my_app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/bitch",
+            "outputPath": "dist/my_app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -61,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "bitch:build"
+            "browserTarget": "my_app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "bitch:build:production"
+              "browserTarget": "my_app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "bitch:build"
+            "browserTarget": "my_app:build"
           }
         },
         "test": {
@@ -109,16 +110,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "bitch:serve"
+            "devServerTarget": "my_app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "bitch:serve:production"
+              "devServerTarget": "my_app:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "bitch"
+  "defaultProject": "my_app"
 }
